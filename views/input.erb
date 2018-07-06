@@ -3,9 +3,10 @@
 <h1><%= "Let's Learn some Words"%></h1>
 <h2><%= "Click on a word to learn more"%></h2>
 <a href='/items/duck'><h3><%= "duck" %></h3></a>
-
-<h3><%= "Duck" %></h3>
-
+<form action="/items/duck" method="post">
+  <h3><%= "Duck" %></h3>
+    <button type="submit" class="btn btn-primary" >Duck</button>
+</form>
 
 
 

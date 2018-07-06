@@ -5,10 +5,10 @@ set(:show_exceptions, false)
 #
 describe('Duck word information', {:type => :feature}) do
   it('Has a link to more information about the word duck') do
-    visit('/items/duck')
+    visit('/')
     # fill_in('riddle_one', :with => 'sleep')
     # fill_in('riddle_two', :with => 'time')
-    click_button('duck')
+    click_button('Duck')
     expect(page).to have_content('This is a duck')
   end
 end
