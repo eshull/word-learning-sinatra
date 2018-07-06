@@ -12,9 +12,9 @@ get ('/') do
   # @list = Words.all()
   erb(:input)
 end
-post ('/items/duck') do
-  word = params["word"]
-  words = Words.new(word)
+get ('/items/duck') do
+  # word = params["word"]
+  words = Words.new("duck")
   @word = words
   # word = params["duck"]
   # words = Words.new(word)
