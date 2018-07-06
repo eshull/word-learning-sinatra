@@ -12,8 +12,8 @@
 </form> -->
 
 <% @list.each do |item| %>
-  <p><%= item.word %></p>
-  <a href='/items/<%= item.id %>'><%= item.word %></a>
+  <p><% item.word %></p>
+  <a href='/new/<%= item.id %>'><%= item.word %></a>
 <% end %>
 
 <!-- <form action="/items/lizard" method="post">

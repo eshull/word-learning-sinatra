@@ -20,11 +20,21 @@ end
 
 
 get ('/items/:id') do
+  # @item = Words.find(params[:id])
   words = Words.new(params[:id])
   @word = words
   # @list = Words.all
   @image = words.img_maker(@word.word)
   erb(:output)
+end
+get ('/new/:id') do
+  @word = Words.find(params[:id])
+  words = Words.new(params[:id])
+  # words = Words.new(params[:id])
+  @word = words
+  # @list = Words.all
+    @image = words.img_maker(@word.word)
+  erb(:list_words)
 end
 
 
