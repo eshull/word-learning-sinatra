@@ -7,56 +7,17 @@
 <a href='/items/house'><h3><%= "House" %></h3></a>
 <a href='/items/banana'><h3><%= "Banana" %></h3></a>
 <a href='/items/lizard'><h3><%= "Lizard" %></h3></a>
-<!-- <form action="/items/duck" method="post">
-    <button type="submit" class="btn btn-primary" >Duck</button>
-</form> -->
 
 <% @list.each do |item| %>
   <p><% item.word %></p>
   <a href='/new/<%= item.id %>'><%= item.word %></a>
 <% end %>
 
-<!-- <form action="/items/lizard" method="post">
-    <button type="submit" class="btn btn-primary" >Lizard</button>
-</form>
-<form action="/items/house" method="post">
-    <button type="submit" class="btn btn-primary" >House</button>
-</form>
-<form action="/items/banana" method="post">
-    <button type="submit" class="btn btn-primary" >Banana</button>
-</form>
-<form action="/items/dog" method="post">
-    <button type="submit" class="btn btn-primary" >Dog</button>
-</form> -->
-
-
-
-
 <form action="/" method="post">
   <div class="form-group">
     <label for="food">What word would you like to learn about?</label>
     <input type="text" class="form-control" name="new_word" id="new_word">
   </div>
-  <!-- <div class="form-group">
-    <label for="car">What is your favorite car?</label>
-    <input type="text" class="form-control" name="car" id="car">
-  </div>
-  <div class="form-group">
-    <label for="color">What is your favorite color?</label>
-    <input type="text" class="form-control" name="color" id="color">
-  </div>
-  <div class="form-group">
-    <label for="person">Who is your favorite person?</label>
-    <input type="text" class="form-control" name="person" id="person">
-  </div>
-  <div class="form-group">
-    <label for="animal">What is your favorite animal?</label>
-    <input type="text" class="form-control" name="animal" id="animal">
-  </div>
-  <div class="form-group">
-    <label for="saying">What is your favorite saying?</label>
-    <input type="text" class="form-control" name="saying" id="saying">
-  </div> -->
   <button type="submit" class="btn btn-primary" >Add Word</button>
 </form>
 

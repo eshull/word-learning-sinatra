@@ -35,31 +35,3 @@ get ('/new/:id') do
     @image = words.img_maker(Words.find(params[:id]).word)
   erb(:list_words)
 end
-
-
-# get ('/items/:id') do
-#   @item = Words.find(params[:id])
-#   @image = words.img_maker(@item.word)
-#   erb(:input)
-# end
-
-
-# get ('/items/:id') do
-#   @item = Words.find(params[:id])
-#   word = params["new_word"]
-#   words = Words.new(word)
-#   @image = words.img_maker(word)
-#   erb(:output)
-# end
-
-# get ('/items/duck') do
-#   # word = params["word"]
-#   words = Words.new("duck")
-#   @word = words
-#   @image = words.img_maker(@word.word)
-#   # word = params["duck"]
-#   # words = Words.new(word)
-#   # words.save()
-#   # @list = Words.all()
-#   erb(:duck)
-# end

@@ -17,11 +17,11 @@ describe('Dog word information', {:type => :feature}) do
     expect(page).to have_content('This is a dog')
   end
 end
-
-# describe('Duck word information', {:type => :feature}) do
-#   it('Has a link to a page with an image of a duck') do
-#     visit('/')
-#     click_on('Duck')
-#     expect(page).to have_content('duck picture"/>')
-#   end
-# end
+describe('Dog word information', {:type => :feature}) do
+  it('Has a link to more information about the word dog') do
+    visit('/')
+    words = Words.new("cup")
+    click_on('cup')
+    expect(page).to have_content('This is a cup')
+  end
+end
