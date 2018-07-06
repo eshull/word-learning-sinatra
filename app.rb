@@ -12,15 +12,16 @@ get ('/') do
   # @list = Words.all()
   erb(:input)
 end
-post ('/') do
-  word = params["duck"]
-  words = Words.new(word)
-  words.save()
+get ('/items/duck') do
+  "Hi there"
+  # word = params["duck"]
+  # words = Words.new(word)
+  # words.save()
   # @list = Words.all()
   erb(:duck)
 end
 
-get ('/items/:id') do
-  @item = Words.find(params[:id])
-  erb(:output)
-end
+# get ('/items/:id') do
+#   @item = Words.find(params[:id])
+#   erb(:output)
+# end
