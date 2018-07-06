@@ -21,6 +21,14 @@ end
     expect(Words.all()).to(eq([words]))
   end
 end
+describe(".clear") do
+  it("clears all items from the list") do
+    words = Words.new("kiwi")
+    words.save()
+    Words.clear()
+    expect(Words.all()).to(eq([]))
+  end
+end
 # describe("#things") do
 #   it("returns a list") do
 #     expect(Things.all()).to(eq([]))
