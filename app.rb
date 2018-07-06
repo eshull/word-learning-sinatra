@@ -18,6 +18,16 @@ post ('/') do
   erb(:input)
 end
 
+
+get ('/items/:id') do
+  words = Words.new(params[:id])
+  @word = words
+  # @list = Words.all
+  @image = words.img_maker(@word.word)
+  erb(:output)
+end
+
+
 # get ('/items/:id') do
 #   @item = Words.find(params[:id])
 #   @image = words.img_maker(@item.word)
@@ -25,13 +35,13 @@ end
 # end
 
 
-get ('/items/:id') do
-  @item = Words.find(params[:id])
-  word = params["new_word"]
-  words = Words.new(word)
-  @image = words.img_maker(word)
-  erb(:output)
-end
+# get ('/items/:id') do
+#   @item = Words.find(params[:id])
+#   word = params["new_word"]
+#   words = Words.new(word)
+#   @image = words.img_maker(word)
+#   erb(:output)
+# end
 
 # get ('/items/duck') do
 #   # word = params["word"]
@@ -43,13 +53,4 @@ end
 #   # words.save()
 #   # @list = Words.all()
 #   erb(:duck)
-# end
-
-
-# get ('/items/:id') do
-#   words = Words.new(params[:id])
-#   @word = words
-#   # @list = Words.all
-#   @image = words.img_maker(@word.word)
-#   erb(:output)
 # end

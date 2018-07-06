@@ -14,6 +14,13 @@ describe(".Things") do
     expect(Words.all()).to(eq([words.word]))
   end
 end
+  describe("#save") do
+  it("saves an item to the list of items") do
+    words = Words.new("kiwi")
+    words.save()
+    expect(Words.all()).to(eq([words]))
+  end
+end
 # describe("#things") do
 #   it("returns a list") do
 #     expect(Things.all()).to(eq([]))
