@@ -5,8 +5,14 @@ require('words')
 describe("#find") do
     it("finds an item based on its name") do
       words = Words.new("dog")
-      expect(words.find()).to(eq("dog"))
+      expect(words.word()).to(eq("dog"))
     end
+end
+describe(".Things") do
+  it("creates a new word to learn about") do
+    words = Words.new("kiwi")
+    expect(Words.all()).to(eq([words.word]))
+  end
 end
 # describe("#things") do
 #   it("returns a list") do

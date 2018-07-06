@@ -10,12 +10,18 @@ describe('Duck word information', {:type => :feature}) do
     expect(page).to have_content('This is a duck')
   end
 end
-# describe('answer the riddle', {:type => :feature}) do
-#   it('processes whether the user has answered the riddle correctly or not') do
+describe('Dog word information', {:type => :feature}) do
+  it('Has a link to more information about the word dog') do
+    visit('/')
+    click_on('Dog')
+    expect(page).to have_content('This is a dog')
+  end
+end
+
+# describe('Duck word information', {:type => :feature}) do
+#   it('Has a link to a page with an image of a duck') do
 #     visit('/')
-#     fill_in('riddle_one', :with => 'sleep')
-#     fill_in('riddle_two', :with => 'time')
-#     click_button('Riddle Me')
-#     expect(page).to have_content('You shall PASS!')
+#     click_on('Duck')
+#     expect(page).to have_content('duck picture"/>')
 #   end
 # end

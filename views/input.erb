@@ -3,10 +3,20 @@
 <h1><%= "Let's Learn some Words"%></h1>
 <h2><%= "Click on a word to learn more"%></h2>
 <a href='/items/duck'><h3><%= "Duck" %></h3></a>
+<a href='/items/dog'><h3><%= "Dog" %></h3></a>
+<a href='/items/house'><h3><%= "House" %></h3></a>
+<a href='/items/banana'><h3><%= "Banana" %></h3></a>
+<a href='/items/lizard'><h3><%= "Lizard" %></h3></a>
 <!-- <form action="/items/duck" method="post">
     <button type="submit" class="btn btn-primary" >Duck</button>
 </form> -->
-<form action="/items/lizard" method="post">
+
+<% @list.each do |item| %>
+  <p><%= item.word %></p>
+  <a href='/items/<%= item.id %>'><%= item.word %></a>
+<% end %>
+
+<!-- <form action="/items/lizard" method="post">
     <button type="submit" class="btn btn-primary" >Lizard</button>
 </form>
 <form action="/items/house" method="post">
@@ -17,7 +27,7 @@
 </form>
 <form action="/items/dog" method="post">
     <button type="submit" class="btn btn-primary" >Dog</button>
-</form>
+</form> -->
 
 
 
