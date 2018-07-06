@@ -41,7 +41,7 @@ class Words
 
 end
 
-# 
+#
 # class Things
 #   @@list = []
 #   attr_accessor :food
