@@ -1,11 +1,13 @@
 <div class="container">
 
-<h1><%= "Make a list of your favorite things:"%></h1>
-<!-- <h1><%= @description %></h1> -->
-<% @list.each do |item| %>
-  <p><%= item.food %></p>
-  <a href='/items/<%= item.id %>'><%= item.food %></a>
-<% end %>
+<h1><%= "Let's Learn some Words"%></h1>
+<h2><%= "Click on a word to learn more"%></h2>
+<a href='/items/duck'><h3><%= "duck" %></h3></a>
+
+<h3><%= "Duck" %></h3>
+
+
+
 
 
 <form action="/" method="post">

@@ -2,23 +2,25 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/words')
-require('pry')
+# require('pry')
 
-
+get '/hi' do
+    "Hello World!"
+end
 
 get ('/') do
-  @list = Things.all()
-  erb(:list)
+  # @list = Words.all()
+  erb(:input)
 end
 post ('/') do
-  food = params["food"]
-  things = Things.new(food)
-  things.save()
-  @list = Things.all()
-  erb(:list)
+  word = params["duck"]
+  words = Words.new(word)
+  words.save()
+  # @list = Words.all()
+  erb(:duck)
 end
 
 get ('/items/:id') do
-  @item = Things.find(params[:id])
+  @item = Words.find(params[:id])
   erb(:output)
 end
