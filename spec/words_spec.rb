@@ -29,7 +29,6 @@ describe(".clear") do
     expect(Words.all()).to(eq([]))
   end
 end
-
 describe(".find") do
     it("finds an item based on its id") do
       words = Words.new("banana")
@@ -39,6 +38,17 @@ describe(".find") do
       expect(Words.find(1)).to(eq(words))
       expect(Words.find(2)).to(eq(words2))
     end
+end
+describe("#id") do
+  it("increments an id by 1 each time a new item is added") do
+    Words.clear
+    words = Words.new("banana")
+    words.save()
+    words2 = Words.new("house")
+    words.save()
+    expect(words.id()).to(eq(1))
+    expect(words2.id()).to(eq(2))
+  end
 end
 # describe("#things") do
 #   it("returns a list") do
