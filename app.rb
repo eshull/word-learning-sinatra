@@ -13,6 +13,9 @@ get ('/') do
   erb(:input)
 end
 post ('/items/duck') do
+  word = params["word"]
+  words = Words.new(word)
+  @word = words
   # word = params["duck"]
   # words = Words.new(word)
   # words.save()
