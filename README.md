@@ -22,6 +22,14 @@ A site that helps children learn words.
 * Sinatra
 
 ## Specs/Steps
+* The homepage of the app should list all words
+* When a word is clicked, it should lead to a page with the word's definitions
+* Children should be able to add a word
+* when viewing a word, children should be able to add one or more definitions
+* children will write up a list of words they don't know (but would like to learn) and then come up with their own definitions
+* deploy to Heroku
+
+## Optional Steps
 * Add a property to each Word that allows kids to link a picture.
 * Allow kids to sort Words alphabetically.
 * Allow kids to search for a particular Word in your application.
