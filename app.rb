@@ -16,6 +16,7 @@ get ('/items/duck') do
   # word = params["word"]
   words = Words.new("duck")
   @word = words
+  @image = words.img_maker(@word.find)
   # word = params["duck"]
   # words = Words.new(word)
   # words.save()

@@ -7,6 +7,11 @@ class Words
   def find
     @word
   end
+
+  def img_maker(name)
+    "<img src='/images/#{name}.png' alt='#{name}' />"
+  end
+
 end
 
 
