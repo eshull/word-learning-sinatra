@@ -44,3 +44,14 @@ describe("#id") do
     expect(words2.id()).to(eq(2))
   end
 end
+describe("#id") do
+  it("shows the id of instance") do
+    Words.clear
+    words = Words.new("banana")
+    words.save()
+    words2 = Words.new("house")
+    words.save()
+    expect(words.id()).to(eq(1))
+    expect(words2.id()).to(eq(2))
+  end
+end

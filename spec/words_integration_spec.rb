@@ -6,14 +6,14 @@ set(:show_exceptions, false)
 describe('Duck word information', {:type => :feature}) do
   it('Has a link to more information about the word duck') do
     visit('/')
-    click_on('Duck')
+    click_on('duck')
     expect(page).to have_content('This is a duck')
   end
 end
 describe('Dog word information', {:type => :feature}) do
   it('Has a link to more information about the word dog') do
     visit('/')
-    click_on('Dog')
+    click_on('dog')
     expect(page).to have_content('This is a dog')
   end
 end

@@ -2,15 +2,15 @@
 
 <h1><%= "Let's Learn some Words"%></h1>
 <h2><%= "Click on a word to learn more"%></h2>
-<a href='/items/duck'><h3><%= "Duck" %></h3></a>
-<a href='/items/dog'><h3><%= "Dog" %></h3></a>
-<a href='/items/house'><h3><%= "House" %></h3></a>
-<a href='/items/banana'><h3><%= "Banana" %></h3></a>
-<a href='/items/lizard'><h3><%= "Lizard" %></h3></a>
+<a href='/link/duck'><h3><%= "Duck" %></h3></a>
+<a href='/link/dog'><h3><%= "Dog" %></h3></a>
+<a href='/link/house'><h3><%= "House" %></h3></a>
+<a href='/link/banana'><h3><%= "Banana" %></h3></a>
+<a href='/link/lizard'><h3><%= "Lizard" %></h3></a>
 
 <% @list.each do |item| %>
   <p><% item.word %></p>
-  <a href='/new/<%= item.id %>'><%= item.word %></a>
+  <a href='/items/<%= item.id %>'><%= item.word %></a>
 <% end %>
 
 <form action="/" method="post">
@@ -20,5 +20,15 @@
   </div>
   <button type="submit" class="btn btn-primary" >Add Word</button>
 </form>
+
+<!-- <form action="/define" method="post">
+  <div class="form-group">
+    <label for="definition_word">Enter your own word:</label>
+    <input type="text" class="form-control" name="definition_word" id="definition_word">
+    <label for="definition">Enter a definition for that word</label>
+    <input type="text" class="form-control" name="definition" id="definition">
+  </div>
+  <button type="submit" class="btn btn-primary" >Add Word & Definition</button>
+</form> -->
 
 </div>

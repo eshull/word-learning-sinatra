@@ -11,6 +11,7 @@ get ('/') do
 end
 
 post ('/') do
+
   word = params["new_word"]
   words = Words.new(word)
   words.save()
@@ -20,18 +21,28 @@ end
 
 
 get ('/items/:id') do
-  # @item = Words.find(params[:id])
-  words = Words.new(params[:id])
-  @word = words
+  @word = Words.find(params[:id])
+  # words = Words.new(params[:id])
+  # @word = words
   # @list = Words.all
-  @image = words.img_maker(@word.word)
+  # @image = @word.img_maker
   erb(:output)
 end
-get ('/new/:id') do
-  @word = Words.find(params[:id])
-  words = Words.new(params[:id])
+
+get ('/link/:name') do
+  @word = Words.new(params[:name])
+  erb(:output)
+end
+
+post ('/define') do
+  define = params["definition"]
+  definition = Definition.new(define)
+  definition.save()
+  @definition_list = Definition.all()
+  erb(:output)
+end
+  # @word = Words.find(params[:id])
+  # add method too add reader too
+
   # words = Words.new(params[:id])
   # @list = Words.all
-    @image = words.img_maker(Words.find(params[:id]).word)
-  erb(:list_words)
-end
