@@ -1,10 +1,10 @@
-<h2>The word is: <%= @word.word%> </h2>
-<h2>This is a <%= @word.word%></h2>
-<h3>Other definitions of<%= @word.word%> </h3>
+<h2>The word is: <%= @word%> </h2>
+<h2>This is a <%= @word%></h2>
+<h3>Other definitions of<%= @word%> </h3>
 <p><%= @definition%></p>
 <form action="/define" method="post">
   <div class="form-group">
-    <label for="definition">Enter your own definition for <%= @word.word%></label>
+    <label for="definition">Enter your own definition for <%= @word%></label>
     <input type="text" class="form-control" name="definition" id="definition">
   </div>
   <button type="submit" class="btn btn-primary" >Add Definition</button>

@@ -10,7 +10,7 @@
 
 <% @list.each do |item| %>
   <p><% item.word %></p>
-  <a href='/items/<%= item.id %>'><%= item.word %></a>
+  <a href='/word/<%= item.id %>'><%= item.word %></a>
 <% end %>
 
 <form action="/" method="post">

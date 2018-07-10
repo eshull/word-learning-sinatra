@@ -1,48 +1,55 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/words')
+require('./lib/word')
 # require('pry')
 
-
+# gets all words in list
 get ('/') do
-  @list = Words.all()
-  erb(:input)
+  @list = Word.all()
+  erb(:words)
 end
 
+# makes a new word on homepage
 post ('/') do
-
   word = params["new_word"]
-  words = Words.new(word)
-  words.save()
-  @list = Words.all()
-  erb(:input)
+  word = Word.new(word)
+  word.save()
+  @list = Word.all()
+  erb(:words)
 end
 
+# creates links for standard words
+get ('/link/:id') do
 
-get ('/items/:id') do
-  @word = Words.find(params[:id])
-  # words = Words.new(params[:id])
-  # @word = words
-  # @list = Words.all
-  # @image = @word.img_maker
-  erb(:output)
+  # @word = Word.find(params[:id])
+  @word = Word.new(params[:id])
+  @image = @word.img_maker
+  # # @list = Word.all
+  # @image = @word_img.img_maker
+  erb(:word)
 end
 
-get ('/link/:name') do
-  @word = Words.new(params[:name])
-  erb(:output)
+get ('/word/:id') do
+  @word = Word.find(params[:id])
+  @image = @word.img_maker
+  # binding.pry
+  erb(:word)
+end
+get ('/def_form') do
+  @list = Word.all()
+  erb(:words)
 end
 
-post ('/define') do
+post ('/word/:id') do
+  # @word = params["definition"]
   define = params["definition"]
-  definition = Definition.new(define)
-  definition.save()
-  @definition_list = Definition.all()
-  erb(:output)
+  word = Word.new(define)
+  @definition =word.definition(word)
+  erb(:word)
 end
-  # @word = Words.find(params[:id])
+  # @word = Word.find(params[:id])
   # add method too add reader too
 
-  # words = Words.new(params[:id])
+  # word = Words.new(params[:id])
   # @list = Words.all
