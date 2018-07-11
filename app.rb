@@ -39,8 +39,8 @@ end
 
 post ('/word/:id') do
   define = params["definition"]
-  @def.definition_save(define)
-  word = Word.new(define)
-  @definition =word.definition(word)
+  definition = Definition.new(define)
+  definition.save()
+  @definition = Definition.all()
   erb(:word)
 end

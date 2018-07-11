@@ -93,4 +93,26 @@ describe(Definition) do
         expect(Definition.find(2)).to(eq(definition2))
       end
   end
+  describe("#id") do
+    it("increments an id by 1 each time a new item is added") do
+      Definition.clear
+      definition = Definition.new("This is a Banana")
+      definition.save()
+      definition2 = Definition.new("This is a House")
+      definition.save()
+      expect(definition.id()).to(eq(1))
+      expect(definition2.id()).to(eq(2))
+    end
+  end
+  describe("#id") do
+    it("shows the id of instance") do
+      Definition.clear
+      definition = Definition.new("This is a Banana")
+      definition.save()
+      definition2 = Definition.new("This is a House")
+      definition.save()
+      expect(definition.id()).to(eq(1))
+      expect(definition2.id()).to(eq(2))
+    end
+  end
 end

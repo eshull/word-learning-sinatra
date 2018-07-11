@@ -81,11 +81,7 @@ class Definition
   def self.all()
     @@definitions
   end
-
-  # def img_maker
-  #   "<img src='/images/#{@word}.png' alt='#{@word} picture' />"
-  # end
-
+  
   def save()
     @@definitions.push(self)
   end
