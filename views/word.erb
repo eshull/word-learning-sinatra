@@ -3,8 +3,12 @@
 <h3>Other definitions of <%= @word.word%> </h3>
 <p><%= @definition%></p>
 
+<% @definitions.each do |item| %>
+  <p><% item.definition %></p>
+  <a href='/word/<%= item.id %>'><%= item.definition %></a>
+<% end %>
 
-<form action="/word/<%= @word.id %>" method="post">
+<form action="/definition/<%= @word.id %>" method="post">
   <div class="form-group">
     <label for="definition">Enter your own definition for <%= @word.word%></label>
     <input type="text" class="form-control" name="definition" id="definition">

@@ -37,10 +37,12 @@ get ('/def_form') do
   erb(:word)
 end
 
-post ('/word/:id') do
+post ('/definition/:id') do
+
+  @word = Word.find(params[:id])
   define = params["definition"]
   definition = Definition.new(define)
   definition.save()
-  @definition = Definition.all()
+  @definitions = Definition.all()
   erb(:word)
 end
