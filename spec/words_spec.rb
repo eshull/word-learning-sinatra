@@ -74,4 +74,12 @@ describe(Definition) do
       expect(Definition.all()).to(eq([definition]))
     end
   end
+  describe(".clear") do
+    it("clears all definitions from the list") do
+      definition = Definition.new("A cat is this")
+      definition.save()
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 end
