@@ -71,7 +71,7 @@ class Definition
 
   def self.find(id)
      item_id = id.to_i()
-     @@definition.each do |item|
+     @@definitions.each do |item|
        if item.id == item_id
          return item
        end

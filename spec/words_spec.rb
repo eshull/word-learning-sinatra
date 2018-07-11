@@ -82,4 +82,15 @@ describe(Definition) do
       expect(Definition.all()).to(eq([]))
     end
   end
+  describe(".find") do
+      it("finds a definition based on its id") do
+        Definition.clear()
+        definition = Definition.new("bananas are fruit")
+        definition.save()
+        definition2 = Definition.new("houses are homes")
+        definition2.save()
+        expect(Definition.find(1)).to(eq(definition))
+        expect(Definition.find(2)).to(eq(definition2))
+      end
+  end
 end
