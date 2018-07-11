@@ -66,4 +66,12 @@ describe(Definition) do
       expect(definition.id()).to(eq(1))
     end
   end
+  describe("#save") do
+    it("saves a definition to the list of definitions") do
+      Definition.clear
+      definition = Definition.new("A dog is this")
+      definition.save()
+      expect(Definition.all()).to(eq([definition]))
+    end
+  end
 end
