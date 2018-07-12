@@ -8,6 +8,11 @@
 
 A site that helps children learn words.
 
+## Link to Heroku Site
+
+https://git.heroku.com/sleepy-plateau-32870.git
+
+
 ## Setup/Contribution Requirements
 
 1. Clone the repo
