@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: true k
 
 source "https://rubygems.org"
 
@@ -9,4 +9,3 @@ gem 'pry'
 gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'capybara', '~> 2.7', '>= 2.7.1'
