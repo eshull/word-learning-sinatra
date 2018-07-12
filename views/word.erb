@@ -1,29 +1,38 @@
-<h2>The word is: <%= @word.word%> </h2>
-<h2>This is a <%= @word.word%></h2>
-<h3>Other definitions of <%= @word.word%> </h3>
-<p><%= @definition%></p>
+<div class="container">
+  <h2>The word is: <%= @word.word%> </h2>
+  <h2>This is a <%= @word.word%></h2>
+  <h3>Other definitions of <%= @word.word%> </h3>
 
-<% @definitions.each do |item| %>
-  <p><% item.definition %></p>
-  <a href='/word/<%= item.id %>'><%= item.definition %></a>
-<% end %>
+  <div class="panel">
+    <div >
+      <h3 class="panel-title">Definitions:</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <% @word.definition_array.each do |definition| %>
+          <li><%= definition %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<form action="/definition/<%= @word.id %>" method="post">
-  <div class="form-group">
-    <label for="definition">Enter your own definition for <%= @word.word%></label>
-    <input type="text" class="form-control" name="definition" id="definition">
-  </div>
-  <button type="submit" class="btn btn-primary" >Add Definition</button>
-</form>
-<!-- <form action="/define" method="post">
-  <div class="form-group">
-    <label for="definition">Enter your own definition for <%= @word%></label>
-    <input type="text" class="form-control" name="definition" id="definition">
-  </div>
-  <button type="submit" class="btn btn-primary" >Add Definition</button>
-</form> -->
+<div class="container">
+  <form action="/words/:id" method="post" >
+    <div class="form-group">
+      <label for="definition" class="control-label">Add a definition:</label>
+      <div>
+        <input name="definition" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <button name="add_definition" value="<%= @word.id %>" type="submit" class="btn btn-info btn-lg">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
 
 <%= @image %>
-
 <a href='/'>Return to home page</a>
-<h4>output page</h4>
+</div>

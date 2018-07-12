@@ -2,47 +2,36 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
-# require('pry')
+require('pry')
 
 # gets all words in list
 get ('/') do
-  @list = Word.all()
+  Word.clear
+  @word_list = Word.all()
   erb(:words)
 end
 
-# makes a new word on homepage
+# makes a new word and definition on homepage
 post ('/') do
   word = params["new_word"]
-  word = Word.new(word)
+  definition = params["definition"]
+  word = Word.new(:word => word)
+  word.definition_save(definition)
   word.save()
-  @list = Word.all()
+  @word_list = Word.all()
   erb(:words)
 end
 
-# creates links for standard words
-get ('/link/:id') do
-  @word = Word.new(params[:id])
-  @image = @word.img_maker
-  erb(:word)
-end
-
-get ('/word/:id') do
+get ('/words/:id') do
   @word = Word.find(params[:id])
   @image = @word.img_maker
   erb(:word)
 end
 
-get ('/def_form') do
-  @list = Word.all()
-  erb(:word)
-end
-
-post ('/definition/:id') do
-
+post ('/words/:id') do
   @word = Word.find(params[:id])
-  define = params["definition"]
-  definition = Definition.new(define)
-  definition.save()
-  @definitions = Definition.all()
+  @word = Word.find(params.fetch("add_definition"))
+  define = params.fetch("definition")
+  @word.definition_save(define)
   erb(:word)
 end

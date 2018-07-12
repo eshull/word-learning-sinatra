@@ -1,34 +1,28 @@
 <div class="container">
+  <h1>Welcome to Word Definer</h1>
+  <h2>Choose one of our words to enter in your own definition for:</h2>
+  <ul>
+    <li>Duck</li>
+    <li>Lizard</li>
+    <li>House</li>
+    <li>Banana</li>
+    <li>Dog</li>
+  </ul>
 
-<h1><%= "Let's Learn some Words"%></h1>
-<h2><%= "Click on a word to learn more"%></h2>
-<a href='/link/duck'><h3><%= "Duck" %></h3></a>
-<a href='/link/dog'><h3><%= "Dog" %></h3></a>
-<a href='/link/house'><h3><%= "House" %></h3></a>
-<a href='/link/banana'><h3><%= "Banana" %></h3></a>
-<a href='/link/lizard'><h3><%= "Lizard" %></h3></a>
+  <% @word_list.each do |item| %>
+    <p><% item.word %></p>
+    <a href='/words/<%= item.id %>'><%= item.word %></a>
+  <% end %>
 
-<% @list.each do |item| %>
-  <p><% item.word %></p>
-  <a href='/word/<%= item.id %>'><%= item.word %></a>
-<% end %>
-
-<form action="/" method="post">
-  <div class="form-group">
-    <label for="food">What word would you like to learn about?</label>
-    <input type="text" class="form-control" name="new_word" id="new_word">
-  </div>
-  <button type="submit" class="btn btn-primary" >Add Word</button>
-</form>
-
-<!-- <form action="/define" method="post">
-  <div class="form-group">
-    <label for="definition_word">Enter your own word:</label>
-    <input type="text" class="form-control" name="definition_word" id="definition_word">
-    <label for="definition">Enter a definition for that word</label>
-    <input type="text" class="form-control" name="definition" id="definition">
-  </div>
-  <button type="submit" class="btn btn-primary" >Add Word & Definition</button>
-</form> -->
-
+  <form action="/" method="post">
+    <div class="form-group">
+      <label for="new_word">Enter one of the words we have defined, or make a definition for your own word:</label>
+      <input type="text" class="form-control" name="new_word" id="new_word">
+    </div>
+    <div class="form-group">
+      <label for="definition">Define</label>
+      <input name="definition" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn btn-primary" >Add Word</button>
+  </form>
 </div>
